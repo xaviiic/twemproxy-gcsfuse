@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: example
+          image: xaviiic/twemproxy-gcsfuse:latest
+          securityContext:
+            privileged: true
+          command:
+            - "/bin/sh"
+            - "-c"
+            - "mkdir -p /etc/config && gcsfuse <bucket_name> /etc/config && nutcracker -c /etc/config/nutcraker.yml"
