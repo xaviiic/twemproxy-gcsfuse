@@ -1,6 +1,6 @@
 FROM chiaen/docker-gcsfuse:latest
 
-Run set -ex \
+RUN set -ex \
     && apk add --no-cache --virtual .redis redis \ 
     && cp $(which redis-cli) /usr/local/bin \
     && apk del .redis
