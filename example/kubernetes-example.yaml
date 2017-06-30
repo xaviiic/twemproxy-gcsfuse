@@ -13,3 +13,5 @@ spec:
             - "/bin/sh"
             - "-c"
             - "mkdir -p /etc/config && gcsfuse <bucket_name> /etc/config && nutcracker -c /etc/config/nutcraker.yml"
+          ports:
+            - containerPort: 22121
